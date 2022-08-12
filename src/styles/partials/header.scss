@@ -1,0 +1,110 @@
+.header {
+	$parent: &;
+
+	width: 100%;
+	z-index: 100;
+	background-color: $white;
+
+	&__top {
+		border-bottom: 1px solid $gray-e9;
+		padding: rem(28) 0;
+
+		@include max(md) {
+			padding: rem(28) rem(15);
+		}
+	}
+
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__burger {
+		display: flex;
+		align-items: center;
+		width: rem(25);
+		height: rem(16);
+		cursor: pointer;
+		transition: opacity 0.3s ease;
+
+		@include max(md) {
+			order: 1;
+		}
+
+		@include hover {
+			opacity: 0.8;
+		}
+
+		&.active {
+			span {
+				background-color: transparent;
+
+				&::before {
+					transform: translateY(6px) rotate(45deg);
+				}
+
+				&::after {
+					transform: translateY(-8px) rotate(-45deg);
+				}
+			}
+		}
+
+		span {
+			display: block;
+			width: 100%;
+			height: rem(4);
+			border-radius: rem(20);
+			background-color: $black;
+			position: relative;
+			transition: background-color 0.3s ease;
+
+			&::before,
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: rem(4);
+				border-radius: rem(20);
+				background-color: $black;
+				position: absolute;
+				transition: transform 0.3s ease;
+			}
+
+			&::before {
+				top: rem(-7);
+			}
+
+			&::after {
+				bottom: rem(-7);
+			}
+		}
+	}
+
+	&__logo {
+		height: rem(27);
+
+		@include max(md) {
+			width: rem(168);
+		}
+
+		svg {
+			width: 100%;
+		}
+	}
+
+	&__search {
+		width: rem(19);
+		height: rem(19);
+		cursor: pointer;
+		transition: opacity 0.3s ease;
+
+		@include max(md) {
+			display: none;
+		}
+
+		@include hover {
+			opacity: 0.8;
+		}
+	}
+}

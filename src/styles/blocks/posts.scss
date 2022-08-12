@@ -1,0 +1,22 @@
+.posts {
+	margin-top: 3rem;
+
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__item {
+		width: 31%;
+		margin-bottom: rem(46);
+
+		@include max(md) {
+			width: 48%;
+		}
+
+		@include max(sm) {
+			width: 100%;
+		}
+	}
+}

@@ -1,0 +1,100 @@
+.post {
+	$parent: &;
+
+	@include hover {
+		#{$parent}__image {
+			box-shadow: 0 0 13px 0 rgba(34, 60, 80, 0.2);
+		}
+	}
+
+	&__image {
+		height: 0;
+		padding-top: 64%;
+		position: relative;
+		transition: box-shadow 0.3s ease;
+
+		@include max(md) {
+			padding-top: 51%;
+		}
+
+		@include max(sm) {
+			padding-top: 60%;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+	}
+
+	&__tag {
+		margin-top: rem(17);
+
+		a {
+			font-size: rem(13);
+			line-height: rem(13);
+			font-weight: 700;
+			color: $red;
+			transition: opacity 0.3s ease;
+
+			@include hover {
+				opacity: 0.8;
+			}
+		}
+	}
+
+	&__title {
+		display: inline-block;
+		font-size: rem(24);
+		line-height: rem(30);
+		font-weight: 700;
+		margin-top: rem(16);
+		transition: color 0.3s ease;
+
+		@include hover {
+			color: $gray-96;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		font-size: rem(12);
+		line-height: rem(12);
+		margin-top: rem(16);
+	}
+
+	&__author {
+		font-weight: 500;
+	}
+
+	&__date,
+	&__views {
+		display: inline-flex;
+		align-items: center;
+		color: $gray-9b;
+
+		&::before {
+			content: '';
+			display: block;
+			width: rem(3);
+			height: rem(3);
+			background-color: $gray-d7;
+			margin: 0 rem(5);
+		}
+	}
+
+	&__text {
+		font-size: rem(14);
+		line-height: rem(20);
+		color: $gray-92;
+		margin-top: rem(17);
+	}
+}

@@ -1,0 +1,15 @@
+.menu.wow.fadeInDown(data-wow-delay='0.3s')
+	.container.menu__container
+		ul.menu__item
+			each item in MENU
+				li
+					if item.url
+						a(href=item.url)!= item.text
+					if item.submenu
+						span!= item.text
+							+icon('chevron')(width='10', height='6')
+						ul.menu__submenu
+							each subItem in item.submenu
+								li
+									a(href='#')!= subItem
+										+icon('chevron-right')(width='6', height='9')

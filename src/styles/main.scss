@@ -1,0 +1,18 @@
+/* Libs */
+@import './../../node_modules/swiper/swiper';
+@import 'libs/animate.css';
+
+/* Base */
+@import 'base/var';
+@import 'base/mixin';
+@import 'base/fonts';
+@import 'base/global';
+
+/* Partials */
+@import 'partials/header';
+@import 'partials/footer';
+@import 'partials/menu';
+
+/* Blocks */
+@import 'blocks/posts';
+@import 'blocks/post';
